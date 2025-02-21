@@ -60,16 +60,16 @@ def main():
     if 'user_data' not in st.session_state:
         st.session_state.user_data = None
 
-    st.title("🌱 Growth Mindset Challenge")
+    st.title("Growth Mindset Challenge")
     st.markdown('<p class="big-font">Welcome! Share your journey and aspirations with us.</p>', unsafe_allow_html=True)
     
-    st.sidebar.header("👤 Enter Your Details")
+    st.sidebar.header("Enter Your Details")
     name = st.sidebar.text_input("Name")
     bio = st.sidebar.text_area("Describe yourself in a few words")
     hobby = st.sidebar.text_input("Your Dream Goal")
     uploaded_file = st.sidebar.file_uploader("Upload Your Image", type=["jpg", "png"])
 
-    if st.sidebar.button("Submit ✅"):
+    if st.sidebar.button("Submit"):
         if name and bio and hobby:
             if uploaded_file is not None:
                 image = Image.open(uploaded_file)
@@ -84,9 +84,9 @@ def main():
                     'image': img_str
                 }
             else:
-                st.warning("⚠️ Please upload an image.")
+                st.warning("Please upload an image.")
         else:
-            st.warning("⚠️ All fields are required!")
+            st.warning("All fields are required!")
 
     if st.session_state.user_data:
         st.markdown(f"""
@@ -98,33 +98,33 @@ def main():
         </div>
         """, unsafe_allow_html=True)
 
-    st.header("🚀 What is a Growth Mindset?")
+    st.header("What is a Growth Mindset?")
     st.write("""
-    A **growth mindset** is the belief that abilities can be developed through dedication, learning, and persistence.
+    A growth mindset is the belief that abilities can be developed through dedication, learning, and persistence.
     This mindset helps you embrace challenges and view failures as opportunities to improve.
     """)
     
-    st.header("🌟 Why Develop a Growth Mindset?")
+    st.header("Why Develop a Growth Mindset?")
     reasons = [
-        "✅ Embrace challenges as learning opportunities",
-        "✅ Learn from mistakes and failures",
-        "✅ Stay persistent even during difficulties",
-        "✅ Celebrate efforts, not just results",
-        "✅ Keep an open mind and adapt when needed"
+        "Embrace challenges as learning opportunities",
+        "Learn from mistakes and failures",
+        "Stay persistent even during difficulties",
+        "Celebrate efforts, not just results",
+        "Keep an open mind and adapt when needed"
     ]
     st.markdown("\n".join(reasons))
     
-    st.header("📌 How to Practice a Growth Mindset?")
+    st.header("How to Practice a Growth Mindset?")
     practices = [
-        "🎯 Set learning goals beyond just achievements",
-        "📝 Reflect on challenges and successes",
-        "💡 Seek feedback and use it for improvement",
-        "😊 Stay positive and encourage others"
+        "Set learning goals beyond just achievements",
+        "Reflect on challenges and successes",
+        "Seek feedback and use it for improvement",
+        "Stay positive and encourage others"
     ]
     st.markdown("\n".join(practices))
     
     st.markdown("""
-    🌱 **Your journey is about continuous growth, not just proving yourself.** Keep pushing forward and improving! 🚀
+    Your journey is about continuous growth, not just proving yourself. Keep pushing forward and improving.
     """)
 
 if __name__ == "__main__":
